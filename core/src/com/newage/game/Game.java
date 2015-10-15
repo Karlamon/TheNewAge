@@ -19,12 +19,10 @@ public class Game extends ApplicationAdapter {
 
 	@Override
 	public void create() {
-		img = new Texture("badlogic.jpg");
 		gsm = new GameStateManager();
 		batch = new SpriteBatch();
 		Gdx.gl.glClearColor(1, 0, 0, 1);
 		gsm.push(new MainMenuState(gsm));
-
 	}
 
 	@Override

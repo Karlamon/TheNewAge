@@ -1,5 +1,6 @@
 package com.newage.game.states;
 
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.newage.game.Game;
@@ -20,7 +21,6 @@ public class PlayState extends State {
 
 	@Override
 	protected void handelInput() {
-		// TODO Auto-generated method stub
 
 	}
 
