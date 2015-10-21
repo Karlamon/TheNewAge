@@ -9,13 +9,43 @@ public class Animation {
 	private int frameCount;
 	private int frame;
 
-	public Animation(TextureRegion region, int frameCount, float cycleTime) {
+	public Animation(TextureRegion region, int frameCount, float cycleTime, int row) {
 		frames = new Array<TextureRegion>();
 		int frameWidth = region.getRegionWidth() / frameCount;
 		int frameHeight = region.getRegionHeight() / frameCount;
-		for (int i = 0; i < frameCount; i++) {
-			//frames.add(new TextureRegion(region, i * frameWidth, 0, frameWidth, region.getRegionHeight()));
-			frames.add(new TextureRegion(region, i * frameWidth, i * frameHeight, frameWidth, frameHeight));
+		switch(row) {
+		
+		// Walk Down animation
+		case 0:
+			for (int i = 0; i < frameCount; i++) {
+				frames.add(new TextureRegion(region, i * frameWidth, 0 * frameHeight, frameWidth, frameHeight));
+			}
+			break;
+
+			// Walk Left animation
+		case 1:
+			for (int i = 0; i < frameCount; i++) {
+				frames.add(new TextureRegion(region, i * frameWidth, 1 * frameHeight, frameWidth, frameHeight));
+			}
+			break;
+
+			// Walk Right animation
+		case 2:
+			for (int i = 0; i < frameCount; i++) {
+				frames.add(new TextureRegion(region, i * frameWidth, 2 * frameHeight, frameWidth, frameHeight));
+			}
+			break;
+
+			// Walk Up animation
+		case 3:
+			for (int i = 0; i < frameCount; i++) {
+				frames.add(new TextureRegion(region, i * frameWidth, 3 * frameHeight, frameWidth, frameHeight));
+			}
+			break;
+
+			// No animation, player stationary
+		default:
+			break;
 		}
 		this.frameCount = frameCount;
 		maxFrameTime = cycleTime / frameCount;
