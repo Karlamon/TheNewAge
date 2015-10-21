@@ -2,6 +2,7 @@ package com.newage.game.sprites;
 
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.utils.Array;
+
 public class Animation {
 	private Array<TextureRegion> frames;
 	private float maxFrameTime;
@@ -13,37 +14,37 @@ public class Animation {
 		frames = new Array<TextureRegion>();
 		int frameWidth = region.getRegionWidth() / frameCount;
 		int frameHeight = region.getRegionHeight() / frameCount;
-		switch(row) {
-		
-		// Walk Down animation
+		switch (row) {
+
+		// Walk down animation.
 		case 0:
 			for (int i = 0; i < frameCount; i++) {
 				frames.add(new TextureRegion(region, i * frameWidth, 0 * frameHeight, frameWidth, frameHeight));
 			}
 			break;
 
-			// Walk Left animation
+		// Walk left animation.
 		case 1:
 			for (int i = 0; i < frameCount; i++) {
 				frames.add(new TextureRegion(region, i * frameWidth, 1 * frameHeight, frameWidth, frameHeight));
 			}
 			break;
 
-			// Walk Right animation
+		// Walk right animation.
 		case 2:
 			for (int i = 0; i < frameCount; i++) {
 				frames.add(new TextureRegion(region, i * frameWidth, 2 * frameHeight, frameWidth, frameHeight));
 			}
 			break;
 
-			// Walk Up animation
+		// Walk up animation.
 		case 3:
 			for (int i = 0; i < frameCount; i++) {
 				frames.add(new TextureRegion(region, i * frameWidth, 3 * frameHeight, frameWidth, frameHeight));
 			}
 			break;
 
-			// No animation, player stationary
+		// No animation, player is stationary.
 		default:
 			break;
 		}

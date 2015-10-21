@@ -18,10 +18,10 @@ public class Player2 {
 	private Animation p2MoveRight;
 	private Animation p2MoveUp;
 	private Rectangle bounds;
-	private boolean p2down = false;
-	private boolean p2up = false;
-	private boolean p2left = false;
-	private boolean p2right = false;
+	private boolean p2Down = false;
+	private boolean p2Up = false;
+	private boolean p2Left = false;
+	private boolean p2Right = false;
 
 	public Player2(int x, int y) {
 		position = new Vector3(0, 0, 0);
@@ -40,37 +40,37 @@ public class Player2 {
 		// Move p2up
 		if ((Gdx.input.isKeyPressed(Input.Keys.UP)) && (getPosition().y < (Game.HEIGHT - p2Texture.getHeight() / 4))) {
 			p2MoveUp.update(dt);
-			p2down = false;
-			p2up = true;
-			p2right = false;
-			p2left = false;
+			p2Down = false;
+			p2Up = true;
+			p2Right = false;
+			p2Left = false;
 			position.add(velocity.x, (MOVEMENT * dt), 0);
 			
 			// Move p2down
 		} else if ((Gdx.input.isKeyPressed(Input.Keys.DOWN)) && (getPosition().y > 0)) {
 			p2MoveDown.update(dt);
-			p2down = true;
-			p2up = false;
-			p2right = false;
-			p2left = false;
+			p2Down = true;
+			p2Up = false;
+			p2Right = false;
+			p2Left = false;
 			position.sub(velocity.x, (MOVEMENT * dt), 0);
 			
 			// Move p2right
 		} else if ((Gdx.input.isKeyPressed(Input.Keys.RIGHT)) && (getPosition().x < (Game.WIDTH - p2Texture.getWidth() / 4))) {
 			p2MoveRight.update(dt);
-			p2down = false;
-			p2up = false;
-			p2right = true;
-			p2left = false;
+			p2Down = false;
+			p2Up = false;
+			p2Right = true;
+			p2Left = false;
 			position.add((MOVEMENT * dt), velocity.y, 0);
 			
 			// Move p2left
 		} else if ((Gdx.input.isKeyPressed(Input.Keys.LEFT)) && (getPosition().x > 0)) {
 			p2MoveLeft.update(dt);
-			p2down = false;
-			p2up = false;
-			p2right = false;
-			p2left = true;
+			p2Down = false;
+			p2Up = false;
+			p2Right = false;
+			p2Left = true;
 			position.sub((MOVEMENT * dt), velocity.y, 0);
 			
 			// No Movements
@@ -84,19 +84,19 @@ public class Player2 {
 	}
 
 	public TextureRegion getTexture() {
-		if (p2up) {
+		if (p2Up) {
 			return p2MoveUp.getFrame();
 		}
 		
-		if (p2down) {
+		if (p2Down) {
 			return p2MoveDown.getFrame();
 		}
 		
-		if (p2right) {
+		if (p2Right) {
 			return p2MoveRight.getFrame();
 		}
 		
-		if (p2left) {
+		if (p2Left) {
 			return p2MoveLeft.getFrame();
 		}
 		
