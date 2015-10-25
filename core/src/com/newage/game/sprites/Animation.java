@@ -14,6 +14,7 @@ public class Animation {
 		frames = new Array<TextureRegion>();
 		int frameWidth = region.getRegionWidth() / frameCount;
 		int frameHeight = region.getRegionHeight() / frameCount;
+		int frameHeightButton = region.getRegionHeight();
 		switch (row) {
 
 		// Walk down animation.
@@ -42,6 +43,12 @@ public class Animation {
 			for (int i = 0; i < frameCount; i++) {
 				frames.add(new TextureRegion(region, i * frameWidth, 3 * frameHeight, frameWidth, frameHeight));
 			}
+			break;
+			
+		// Button switch animation.
+		case 4:
+			frames.set(frameHeightButton, region);
+			//frames.add(new TextureRegion(region, i * frameWidth, 3 * frameHeight, frameWidth, frameHeight));
 			break;
 
 		// No animation, player is stationary.

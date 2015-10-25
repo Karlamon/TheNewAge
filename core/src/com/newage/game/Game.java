@@ -3,7 +3,6 @@ package com.newage.game;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.newage.game.states.GameStateManager;
 import com.newage.game.states.MainMenuState;
@@ -15,7 +14,6 @@ public class Game extends ApplicationAdapter {
 
 	private GameStateManager gsm;
 	SpriteBatch batch;
-	Texture img;
 
 	@Override
 	public void create() {

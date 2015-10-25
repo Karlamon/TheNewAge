@@ -108,7 +108,7 @@ public class Player1 {
 	public Rectangle getBounds() {
 		return bounds;
 	}
-
+	
 	public void dispose() {
 		p1Texture.dispose();
 	}
