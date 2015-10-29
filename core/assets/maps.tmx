@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="22" tilewidth="32" tileheight="32" nextobjectid="1">
+ <tileset firstgid="1" name="map" tilewidth="32" tileheight="32" tilecount="90">
+  <image source="map.gif" width="288" height="320"/>
+ </tileset>
+ <tileset firstgid="91" name="cave" tilewidth="40" tileheight="40" tilecount="30">
+  <image source="cave.png" width="200" height="263"/>
+ </tileset>
+ <layer name="Area" width="40" height="22">
+  <data encoding="base64" compression="zlib">
+   eJztw0ENAAAMA6Grf9OzsQckrJqqqqrvH7f5A3E=
+  </data>
+ </layer>
+ <layer name="OuterWall" width="40" height="22">
+  <data encoding="base64" compression="zlib">
+   eJztzsEJAAAMg8CMmf0n6RB+UvDAv03S8Vb5x/jH+Mf4x/jH+Mf4x/jH+Md8+VvuAAjkKUE=
+  </data>
+ </layer>
+ <layer name="InnerWall" width="40" height="22">
+  <data encoding="base64" compression="zlib">
+   eJztltsKwCAIQPuZnvr//4s9CCGaJl4KdiA2Npun5mqtvUOvFhAYzs/r6CjFQsti9ZPyduZ8xXP+cA7JcecXMbfU86x+mjzQZxDXtH2j/Cz3cJxmPFBfHn7Z3xoH53GDG/CCH9Ve5mRtrgCvF7d5WmqWq5+IujrZO6iY3brmATV+Kd66h1g5eR+W+c5E61fl/eWF/Rf+Qbi4Hz0Tb3YOmQ==
+  </data>
+ </layer>
+ <layer name="Door" width="40" height="22">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFgxmIDVKzRsHQA6PxPxoGo2DkgNG0PgpGwSgYTGC0TKIuAABVhACF
+  </data>
+ </layer>
+</map>

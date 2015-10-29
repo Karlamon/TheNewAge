@@ -24,7 +24,7 @@ public class Player1 {
 	private boolean p1Right = false;
 
 	public Player1(int x, int y) {
-		position = new Vector3(0, 0, 0);
+		position = new Vector3(x, y, 0);
 		velocity = new Vector3(0, 0, 0);
 		p1Texture = new Texture("player1.png");
 		p1MoveDown = new Animation(new TextureRegion(p1Texture), 4, 0.5f, 0);
@@ -38,7 +38,7 @@ public class Player1 {
 		bounds.setPosition(position.x, position.y);
 
 		// Move Player 1 up.
-		if ((Gdx.input.isKeyPressed(Input.Keys.W)) && (getPosition().y < (Game.HEIGHT - p1Texture.getHeight() / 4))) {
+		if ((Gdx.input.isKeyPressed(Input.Keys.W)) && (getPosition().y < ((Game.HEIGHT / 1.04) - p1Texture.getHeight() / 4))) {
 			p1MoveUp.update(dt);
 			p1Down = false;
 			p1Up = true;
@@ -47,7 +47,7 @@ public class Player1 {
 			position.add(velocity.x, (MOVEMENT * dt), 0);
 
 			// Move Player 1 down.
-		} else if ((Gdx.input.isKeyPressed(Input.Keys.S)) && (getPosition().y > 0)) {
+		} else if ((Gdx.input.isKeyPressed(Input.Keys.S)) && (getPosition().y > 30)) {
 			p1MoveDown.update(dt);
 			p1Down = true;
 			p1Up = false;
@@ -57,7 +57,7 @@ public class Player1 {
 
 			// // Move Player 1 right.
 		} else if ((Gdx.input.isKeyPressed(Input.Keys.D))
-				&& (getPosition().x < (Game.WIDTH - p1Texture.getWidth() / 4))) {
+				&& (getPosition().x < ((Game.WIDTH / 1.02) - p1Texture.getWidth() / 4))) {
 			p1MoveRight.update(dt);
 			p1Down = false;
 			p1Up = false;
@@ -66,7 +66,7 @@ public class Player1 {
 			position.add((MOVEMENT * dt), velocity.y, 0);
 
 			// Move Player 1 left.
-		} else if ((Gdx.input.isKeyPressed(Input.Keys.A)) && (getPosition().x > 0)) {
+		} else if ((Gdx.input.isKeyPressed(Input.Keys.A)) && (getPosition().x > 30)) {
 			p1MoveLeft.update(dt);
 			p1Down = false;
 			p1Up = false;

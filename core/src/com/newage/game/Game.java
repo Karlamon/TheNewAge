@@ -9,7 +9,7 @@ import com.newage.game.states.MainMenuState;
 
 public class Game extends ApplicationAdapter {
 	public static final int WIDTH = 1280;
-	public static final int HEIGHT = 720;
+	public static final int HEIGHT = 700;
 	public static final String TITLE = "The New Age";
 
 	private GameStateManager gsm;
