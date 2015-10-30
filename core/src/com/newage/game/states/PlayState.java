@@ -13,8 +13,6 @@ import com.newage.game.sprites.Player1;
 import com.newage.game.sprites.Player2;
 import com.newage.game.sprites.Switch;
 
-import sun.java2d.loops.MaskBlit;
-
 public class PlayState extends State implements Screen {
 	// private Texture background;
 	private Switch switch1, switch2, switch3, switch4, switch5, switch6, switch7, switch8;

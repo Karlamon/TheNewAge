@@ -44,11 +44,10 @@ public class Animation {
 				frames.add(new TextureRegion(region, i * frameWidth, 3 * frameHeight, frameWidth, frameHeight));
 			}
 			break;
-			
+
 		// Button switch animation.
 		case 4:
 			frames.set(frameHeightButton, region);
-			//frames.add(new TextureRegion(region, i * frameWidth, 3 * frameHeight, frameWidth, frameHeight));
 			break;
 
 		// No animation, player is stationary.

@@ -4,7 +4,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.maps.MapLayer;
 import com.badlogic.gdx.maps.tiled.TiledMapTile;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer.Cell;
@@ -14,7 +13,7 @@ import com.newage.game.Game;
 
 public class Player2 {
 	private static final int MOVEMENT = 200;
-	private Vector3 position, newPosition, oldPosition, velocity;
+	private Vector3 position, oldPosition, velocity;
 	private Texture p2Texture;
 	private Animation p2MoveDown, p2MoveLeft, p2MoveRight, p2MoveUp;
 	private Rectangle bounds;
@@ -28,7 +27,6 @@ public class Player2 {
 
 	public Player2(int x, int y, TiledMapTileLayer mapLayer) {
 		position = new Vector3(x, y, 0);
-		newPosition = new Vector3(0, 0, 0);
 		oldPosition = new Vector3(x, y, 0);
 		velocity = new Vector3(0, 0, 0);
 		p2Texture = new Texture("player2.png");
@@ -47,7 +45,6 @@ public class Player2 {
 	public void update(float dt) {
 		bounds.setPosition(position.x, position.y);
 		oldPosition.set(position);
-		boolean collided = false;
 
 		// Move Player 1 up.
 		if ((Gdx.input.isKeyPressed(Input.Keys.UP)) && (getPosition().y < (Game.HEIGHT - p2Height))) {
@@ -65,7 +62,6 @@ public class Player2 {
 
 			// check if path is blocked
 			if (isBlocked(tileX1, tileY) || isBlocked(tileX2, tileY)) {
-				// System.out.println("BOOOOOOOOOO");
 				position.set(oldPosition);
 			}
 			// Move Player 1 down.
@@ -105,7 +101,6 @@ public class Player2 {
 
 			// check if path is blocked
 			if (isBlocked(tileX, tileY1) || isBlocked(tileX, tileY2)) {
-				// System.out.println("BOOOOOOOOOO");
 				position.set(oldPosition);
 			}
 
